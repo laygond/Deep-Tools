@@ -1,0 +1,16 @@
+README.md
+juggle
+setup.py
+callbacks/__init__.py
+callbacks/trainingmonitor.py
+datasets/__init__.py
+datasets/simpledatasetloader.py
+juggle.egg-info/PKG-INFO
+juggle.egg-info/SOURCES.txt
+juggle.egg-info/dependency_links.txt
+juggle.egg-info/top_level.txt
+preprocessing/__init__.py
+preprocessing/imagetoarraypreprocessor.py
+preprocessing/simplepreprocessor.py
+utils/__init__.py
+utils/captchahelper.py
