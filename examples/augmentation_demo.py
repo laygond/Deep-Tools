@@ -2,13 +2,13 @@
 # Chapter 2 Practioner Bundle
 
 # USAGE:
-# python augmentation_demo.py --image datasets/images/sample1.png --output output
+# python augmentation_demo.py --image sample1.png --output output
 
 import argparse
 import numpy as np
-from keras.preprocessing.image import ImageDataGenerator
-from keras.preprocessing.image import img_to_array
-from keras.preprocessing.image import load_img
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import img_to_array
+from tensorflow.keras.preprocessing.image import load_img
 
 
 # construct argparse
