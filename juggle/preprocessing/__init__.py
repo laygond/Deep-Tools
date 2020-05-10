@@ -1,3 +1,7 @@
-# import the necessary packages
-from .simplepreprocessor import SimplePreprocessor
-from .imagetoarraypreprocessor import ImageToArrayPreprocessor
+# __init__.py
+from .SimpleDatasetLoader import SimpleDatasetLoader
+from .SimplePreprocessor import SimplePreprocessor
+from .ImageToArrayPreprocessor import ImageToArrayPreprocessor
+from .AspectAwarePreprocessor import AspectAwarePreprocessor
+from .MeanPreprocessor import MeanPreprocessor
+from .PatchPreprocessor import PatchPreprocessor
