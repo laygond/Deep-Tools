@@ -2,7 +2,7 @@
 # Chapter 2 Practioner Bundle
 
 # USAGE:
-# python augmentation_demo.py --image .Input.png --output output
+# python augmentation_demo.py --image datasets/images/sample1.png --output output
 
 import argparse
 import numpy as np
