@@ -23,19 +23,19 @@ Strictly speaking, there is only one max pooling layer – all other reductions 
 dimensions are handled by convolutional layers.
 '''
 
-from keras import backend as K
-from keras.regularizers import l2
-from keras.layers import add
-from keras.models import Model
-from keras.layers import Input
-from keras.layers import Flatten
-from keras.layers.core import Dense
-from keras.layers.core import Activation
-from keras.layers.convolutional import ZeroPadding2D
-from keras.layers.convolutional import MaxPooling2D
-from keras.layers.convolutional import AveragePooling2D
-from keras.layers.convolutional import Conv2D
-from keras.layers.normalization import BatchNormalization
+from tensorflow.keras import backend as K
+from tensorflow.keras.regularizers import l2
+from tensorflow.keras.layers import add
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Input
+from tensorflow.keras.layers import Flatten
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Activation
+from tensorflow.keras.layers import ZeroPadding2D
+from tensorflow.keras.layers import MaxPooling2D
+from tensorflow.keras.layers import AveragePooling2D
+from tensorflow.keras.layers import Conv2D
+from tensorflow.keras.layers import BatchNormalization
 
 
 class ResNet:

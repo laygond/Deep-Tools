@@ -1,17 +1,17 @@
 # MiniGoogLeNet.py
 
-from keras import backend as K
-from keras.layers import concatenate
-from keras.models import Model
-from keras.layers import Input
-from keras.layers import Flatten
-from keras.layers.core import Dense
-from keras.layers.core import Dropout
-from keras.layers.core import Activation
-from keras.layers.convolutional import Conv2D
-from keras.layers.convolutional import MaxPooling2D
-from keras.layers.convolutional import AveragePooling2D
-from keras.layers.normalization import BatchNormalization
+from tensorflow.keras import backend as K
+from tensorflow.keras.layers import concatenate
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Input
+from tensorflow.keras.layers import Flatten
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Dropout
+from tensorflow.keras.layers import Activation
+from tensorflow.keras.layers import Conv2D
+from tensorflow.keras.layers import MaxPooling2D
+from tensorflow.keras.layers import AveragePooling2D
+from tensorflow.keras.layers import BatchNormalization
 
 
 class MiniGoogLeNet:

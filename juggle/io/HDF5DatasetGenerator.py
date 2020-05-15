@@ -2,7 +2,7 @@
 
 import h5py
 import numpy as np
-from keras.utils import np_utils
+from tensorflow.keras.utils import to_categorical
 
 
 class HDF5DatasetGenerator:
@@ -44,7 +44,7 @@ class HDF5DatasetGenerator:
 
                 # check to see if the labels should be binarized
                 if self.binarize:
-                    labels = np_utils.to_categorical(labels, self.classes)
+                    labels = to_categorical(labels, self.classes)
 
                 # check to see if our preprocessors are not None
                 if self.preprocessors is not None:

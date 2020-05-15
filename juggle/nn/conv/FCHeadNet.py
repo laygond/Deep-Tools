@@ -1,8 +1,8 @@
 # FCHNet.py
 
-from keras.layers.core import Dense
-from keras.layers.core import Flatten
-from keras.layers.core import Dropout
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Flatten
+from tensorflow.keras.layers import Dropout
 
 
 class FCHeadNet:

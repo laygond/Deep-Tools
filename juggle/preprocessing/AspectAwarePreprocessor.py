@@ -1,4 +1,9 @@
 # AspectAwarePreprocessor.py
+# Chapter 2.2 Practitioner Bundle
+'''
+  First resize along the shorter side to the desired dimension
+  then crop the newly resized image along the larger side to the desired dimension
+'''
 
 import cv2
 import imutils
@@ -6,8 +11,6 @@ import imutils
 
 
 class AspectAwarePreprocessor:
-    '''
-    '''
     def __init__(self, width, height, inter = cv2.INTER_AREA):
         '''
         store the target image width, height, and interpolation

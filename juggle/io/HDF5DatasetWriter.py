@@ -1,28 +1,26 @@
-# hdf5DatasetWriter.py
+# HDF5DatasetWriter.py
+# Chapter 3.1 Practitioner Bundle
+'''
+It is responsible for taking an input set of NumPy arrays 
+(whether features, raw images, etc.) and writing them to HDF5 format
+'''
 
 import os
 import h5py
 
 
-
 class HDF5DatasetWriter:
-    '''
-    Use to help store data in HDF5 format
-    '''
     def __init__(self, dims:tuple, outputPath:str, dataKey:str = "images",
             bufSize:int = 1000):
         '''
-
-        parameters
-        ----------
-            dims: controls the dimension or shape of the data we will be
-                storing in the dataset.
-            outputPath: path to where our output HDF5 file will be stored on disk.
-            dataKey: name of the dataset that will store the data.
-            bufSize:  controls the size of our in-memory buffer.
+        parameters:
+            dims       : controls the dimension or shape of the data we will be
+                         storing in the dataset.
+            outputPath : path to where our output HDF5 file will be stored on disk.
+            dataKey    : name of the dataset that will store the data.
+            bufSize    : controls the size of our in-memory buffer.
         '''
-        # check to see if the output path exists, and if so,
-        # raise an exception
+        # check to see if the output path exists, and if so, raise an exception
         if os.path.exists(outputPath):
             raise ValueError("The suplpied `outputPath` already" \
                         "exists and cannot be overwritten. Manually delte " \
@@ -44,23 +42,18 @@ class HDF5DatasetWriter:
         self.idx = 0
 
 
-    def add(self, rows, labels):
-        '''
-        '''
-        # add the wors and labels to the buffer
+    def add(self, rows, labels):# to BUFFER
+        # add the rows and labels to the buffer
         self.buffer["data"].extend(rows)
         self.buffer["labels"].extend(labels)
 
-        # check to see if the byffer need to be flushed to disk
+        # check to see if the buffer needs to be flushed to disk
         if len(self.buffer["data"]) >= self.bufSize:
             self.flush()
 
 
-    def flush(self):
-        '''
-        Write the buffers to file and reset them.
-        '''
-        # write the buffers to disk then reset the buffer
+    def flush(self):# to DISK
+        # add/write the buffers to disk, then reset the buffer
         i = self.idx + len(self.buffer["data"])
         self.data[self.idx:i] = self.buffer["data"]
         self.labels[self.idx:i] = self.buffer["labels"]
@@ -83,8 +76,6 @@ class HDF5DatasetWriter:
 
 
     def close(self):
-        '''
-        '''
         # check to see if there are any other entries
         # in the buffer that need to be flushed to disk
         if len(self.buffer["data"]) > 0:
