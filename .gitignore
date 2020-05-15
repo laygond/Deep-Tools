@@ -10,7 +10,7 @@ __pycache__
 output/*
 
 # ignore extra juggle directory
-sample_code/juggle
+sample_code/juggle/
 
 # ignore weight and model files
 model/
