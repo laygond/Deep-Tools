@@ -1,0 +1,59 @@
+# augmentation_demo.py
+# Chapter 2.2 Practioner Bundle
+# Visualizing Data Augmentation
+
+# USAGE:
+#python sample_code/augmentation_demo.py --image ../datasets/MyImages/sample1.jpg --output output/
+
+import argparse
+import numpy as np
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import img_to_array
+from tensorflow.keras.preprocessing.image import load_img
+
+
+# construct argparse
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required = True,
+    help = "path tp the input image")
+ap.add_argument("-o", "--output", required = True,
+    help = "path to output directory to store augmentation examples")
+ap.add_argument("-p", "--prefix", type = str, default = "image",
+    help = "output filename prefix")
+args = vars(ap.parse_args())
+
+
+# load the input image, convert it to a numpy array
+# and then reshape it to have an extra dimension
+print("[INFO] loading example image...")
+image = load_img(args["image"])
+image = img_to_array(image)
+image = np.expand_dims(image, axis = 0)
+
+
+# construct the image generator for data augmentation
+augmenation = ImageDataGenerator(rotation_range = 30,
+                    width_shift_range = 0.1,
+                    height_shift_range = 0.1,
+                    shear_range = 0.2,
+                    zoom_range = 0.2,
+                    horizontal_flip = True, 
+                    fill_mode = "nearest")
+
+
+# construct actual generator
+print("[INFO] generating images...")
+imageGen = augmenation.flow(image, batch_size = 1,
+                save_to_dir = args["output"],
+                save_prefix = args["prefix"],
+                save_format = "jpg")
+
+# initialize the total number of images generated thus far
+# themn loop over examples from our image data augmentation generator
+total = 0
+for image in imageGen:
+    total += 1
+
+    if total == 10:
+        break
+
