@@ -8,3 +8,6 @@
 - HDF5DatasetWriter.py [FEATURE]
 - extract_features.py
 - train_model.py
+#### Chapter 4
+- ranked.py [FEATURE]
+- rank_accuracy,py

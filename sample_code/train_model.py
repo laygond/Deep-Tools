@@ -1,6 +1,6 @@
 # train_model.py
 # Chapter 3.3 Practitioner Bundle
-# Training a Classifier on Extracted Features using Logistic Regression
+# Training a Classifier on Extracted Features using Logistic Regression (saved model as pickle)
 
 # USAGE:
 #python sample_code/train_model.py --database ../datasets/HDF5/Flowers-17.hdf5 --model output/Flowers-17.cpickle

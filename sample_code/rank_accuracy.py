@@ -1,4 +1,10 @@
 # rank_accuracy.py
+# Chapter 4.1 Practitioner Bundle
+# Rank Accuracy on predictions from a pickle saved model on an HDF5 dataset
+
+# USAGE:
+# python sample_code/rank_accuracy.py -d ../datasets/HDF5/Flowers-17.hdf5 --model output/Flowers-17.cpickle
+
 
 import h5py
 import pickle

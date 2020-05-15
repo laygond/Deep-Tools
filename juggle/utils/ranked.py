@@ -1,13 +1,14 @@
 # ranked.py
+# Chapter 4.1 Practitioner Bundle
+'''
+    Computes rank1 and rank5 accuracies given a 
+    set of predictions and their labels (ground truths)
+'''
 
 import numpy as np
 
 
 def rank5_accuracy(preds:'array-like', labels:'array-like'):
-    '''
-    returns the rank1 and rank5 accuracies given a 
-    set of predictions and their labels (ground truths)
-    '''
     # initialize the rank-1 and rank-5 accuracies
     rank1 = 0
     rank5 = 0

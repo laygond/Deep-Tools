@@ -4,8 +4,6 @@ import cv2
 import imutils
 
 
-
-
 def preprocess(image, width, height):
     # grab the dimensions of the image, then initialize
     # the padding values
